@@ -1,0 +1,173 @@
+Issues
+#dpkg: error processing package google-chrome-stable (--install):
+ dependency problems - leaving unconfigured
+
+
+sudo apt-get update
+sudo apt-get clean
+sudo apt-get autoremove
+
+#I got an error and was suggested to run the following:
+
+sudo apt --fix-broken install
+
+#That installed the missing gconf2 and gconf2-service dependencies.
+#I followed the rest of the suggested lines:
+
+sudo apt-get update && sudo apt-get upgrade
+sudo dpkg --configure -a
+sudo apt-get install -f
+
+
+
+
+To install Numix icon packs in Ubuntu/Linux Mint open Terminal (Press Ctrl+Alt+T) and copy the following commands in the Terminal:
+Terminal Commands:
+
+
+
+sudo apt-add-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install numix-icon-theme numix-icon-theme-circle
+
+That's it
+You can use Unity Tweak Tool, Gnome-tweak-tool or Ubuntu-Tweak to change icons.
+
+
+VirtualBox problem
+
+sudo apt-get install libpng16-16 libqt5core5a libqt5widgets5 libsdl1.2debian libqt5x11extras5 libsdl-ttf2.0-0
+
+
+
+
+
+
+JDK problem
+
+
+1. Download tar ball and move to /usr/lib
+2.Update your java laternatives using below scripts
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/java/jdk1.7.0_65/bin/java" 1
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/java/jdk1.7.0_65/bin/javac" 1
+sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/java/jdk1.7.0_65/bin/javaws" 1
+3. Update your ~/.bashrc file
+##add these
+export JAVA_HOME=/usr/lib/java/jdk1.8.0_77
+export PATH="$PATH:$JAVA_HOME/bin"
+4. Done!!!
+
+Doing this the easy way.
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+
+
+
+Virtual Box  Remove
+sudo apt-get remove virtualbox-\*
+sudo apt-get purge virtualbox-\*
+
+
+Uninstall VirtualBox first.
+
+sudo apt-get remove --purge virtualbox 
+Run these commands to delete all virtual machines and settings and Virtual Hard Drives:
+
+sudo rm ~/"VirtualBox VMs" -Rf
+sudo rm ~/.config/VirtualBox/ -Rf
+If you want to install it again. Run this command:
+
+installing latest version of VM 2017
+
+ sudo dpkg -i virtualbox-5.2_5.2.0-118431-Ubuntu-zesty_amd64.deb 
+
+
+
+Installing FileZilla
+
+sudo apt update
+
+sudo apt install filezilla
+
+
+
+or 
+
+add Getdeb repository:
+
+sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
+install the key:
+
+wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
+
+
+
+apt-get update
+apt-get install -y virtualbox-guest-x11
+reboot
+
+
+
+creating hotspot in Ubuntu 17.04 a very tough work for me ...
+
+Now lets  get started ..
+
+1. Click the Etheret icon then on Edit connection 
+2. click Add select wifi from drop down box.
+3. Type the connection name and SSID name what you wnat.
+4.select Mode =Ad-hop and in the device select your Network adapter 
+5.In wifi Security choose WPA/WPA@ Personal and Enter the password of ur choiceV
+6. In IPv4 select shared to all computers in the method Optiins  and  click on save.
+7.now open the Terminal Press Ctrl+Alt+T
+type the followinig Command 
+ cd /etc/NetworkManager/system-connections/
+
+	Your connection name will appear there .
+	Now we have to edit this using the text editor 
+	You can use anyone of them like  :  vim , nano, gedit , atom , sublime...
+	gedit is simple to use :
+		Now type the following command :
+	8 sudo gedit /ect/NetworkManager/system-connections/You_connection_name 
+	hit Enter
+	Now change the following line.
+	mode=adhoc  # replace adhop with ap
+	mode=ap
+	Now save and exit
+	You have restart NetworkManager now
+	type:
+	sudo service Networkmanager restart
+	Press Enter.
+now restart your Ubuntu and then Enjoyyyyy...
+   
+
+
+
+
+1) First, install gnome-panel:
+
+sudo apt-get install --no-install-recommends gnome-panel
+2) To create a new desktop shortcut run the following command either in the terminal or using Alt-F2:
+
+gnome-desktop-item-edit --create-new ~/Desktop
+A window will pop up, submit your shortcut details and click OK:
+
+
+enter image description here
+/home/shailender/Desktop/ALVcu.png
+Your shortcut will now appear on your desktop.
+
+
+
+
+creating Alias of a command 
+
+echo "make='clear'" >> .bashrc
+Now when u type make it will clear the terminal.
+
+
+
+
+
+

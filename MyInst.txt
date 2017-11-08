@@ -48,6 +48,7 @@ JDK problem
 
 1. Download tar ball and move to /usr/lib
 2.Update your java laternatives using below scripts
+# plz replace the jdk version that is file with your own it can be : jdk1.8.0_144 or something else .
 sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/java/jdk1.7.0_65/bin/java" 1
 sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/java/jdk1.7.0_65/bin/javac" 1
 sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/java/jdk1.7.0_65/bin/javaws" 1

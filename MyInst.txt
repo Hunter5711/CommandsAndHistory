@@ -152,6 +152,7 @@ sudo apt-get install --no-install-recommends gnome-panel
 2) To create a new desktop shortcut run the following command either in the terminal or using Alt-F2:
 
 gnome-desktop-item-edit --create-new ~/Desktop
+
 A window will pop up, submit your shortcut details and click OK:
 
 
@@ -166,6 +167,58 @@ creating Alias of a command
 
 echo "make='clear'" >> .bashrc
 Now when u type make it will clear the terminal.
+
+#Some New and powerful commands 
+
+
+
+
+1- Run the last command as Root
+
+sudo !!
+2- Save a file you edited in vim/vi without the needed permissions
+
+:w !sudo tee %
+If you opened a file for edit and when saving you noticed that you forgot to  open file as root, the command above is the solution.
+
+
+3- Runs previous command but replacing :  “foo” by “bar”
+
+
+^foo^bar
+If you did run a long command and you noticed that you made a mistake, to correct the command you can replace only the mistake by the correct word without the need to run the whole command again.
+
+Another alternative to the above command is:
+
+!!:gs/foo/bar
+As opposed to ^foo^bar, which only replaces the first occurrence of foo, this one changes every occurrence
+
+4- Short and elegant way to copy or backup a single file before you edit it.
+
+cp filename{,.bak}
+5- mtr, better than traceroute and has ping combined
+
+mtr unixmen.com
+mtr combines the functionality of the traceroute and ping programs in a single network diagnostic tool.
+
+6- Empty a file without removing it
+
+> file.txt
+7- Execute command without saving it in the history
+
+<space>command
+8- Clear a terminal screen
+
+ctrl-l
+9- List of commands you use most often
+
+history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+10- Get your external IP address.
+
+curl ifconfig.me
+
+Thats all for Today!!
+
 
 
 

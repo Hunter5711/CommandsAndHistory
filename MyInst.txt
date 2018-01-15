@@ -171,7 +171,7 @@ Now when u type make it will clear the terminal.
 #Some New and powerful commands 
 
 
-
+Some Important Linux Commands:
 
 1- Run the last command as Root
 
@@ -218,6 +218,16 @@ history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 curl ifconfig.me
 
 Thats all for Today!!
+
+
+Installing "WINE"  Window Environment. A application package that can be used to run all windows package in Linux. 
+you will able to execute all .exe files However some software may not run properly.
+
+    sudo apt-get update
+   sudo apt-get install wine   # if does not work type another one.
+   sudo apt-get install wine-stable
+  
+
 
 
 

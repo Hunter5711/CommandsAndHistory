@@ -227,11 +227,24 @@ you will able to execute all .exe files However some software may not run proper
    sudo apt-get install wine   # if does not work type another one.
    sudo apt-get install wine-stable
   
+Error After Installing wine and the steps to fix them:
+wine HSS-773.exe 
+err:ole:CoInitializeEx Attempt to change threading model of this apartment from multi-threaded to apartment threaded.
 
 
+This is the error that u wull encounter just after the installation of wine and when u try to install a windows package.
+
+Dont worry what you have to do is:
+type the following command.
+winecfg
+a pop windwo will appear select Windows 7 from the top down box.
 
 
+other wine useful commands.
 
-
-
+ls ~/.wine/drive_c/windows/system32
+Error:
+wine: cannot find L"C:\\windows\\system32\\Set-up.exe"
+	
+then try running wine ~/Desktop/folder-name/Set-up.exe
 

@@ -264,7 +264,7 @@ now make the following chnages:
 comment the line : dns = dnsmasq just put # before this line.
 and 
 managed =true  : from false chnage it to true
-now save the file : Press : Esc+wq
+now save the file : Press : Esc the  :wq
 
 now update the NetworkManager.conf by typing the command:
 

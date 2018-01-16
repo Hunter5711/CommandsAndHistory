@@ -248,3 +248,27 @@ wine: cannot find L"C:\\windows\\system32\\Set-up.exe"
 	
 then try running wine ~/Desktop/folder-name/Set-up.exe
 
+
+Steps to resolve Network problem after upgrading from Ubuntu 16 or 17.04 to Ubuntu 17.10 or 17.10.1
+
+
+Erro: icon of Wired Network and wifi wont show at the top and if somehow the Wifi is connect it will not work.
+
+now we have to use the following command to fix  the error.
+use vim or nano but avoid using gedit as it will give error most of the time ini saving and opening the file.
+
+Type the following command:
+
+sudo vim /etc/NetworkManager/NetworkManager.conf
+now make the following chnages:
+comment the line : dns = dnsmasq just put # before this line.
+and 
+managed =true  : from false chnage it to true
+now save the file : Press : Esc+wq
+
+now update the NetworkManager.conf by typing the command:
+
+sudo service NetworkManager restart
+
+
+

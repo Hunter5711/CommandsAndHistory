@@ -328,3 +328,54 @@ sudo add-apt-repository ppa:yannubuntu/boot-repair
 sudo apt-get update
 sudo apt-get install -y boot-repair && boot-repair
 
+
+
+
+################# Creating Desktop Entry :##########################
+
+gedit ~/.local/share/applications/opt_eclipse.desktop
+
+Then, paste this inside (dont forget to edit Exec and Icon values):
+
+[Desktop Entry]
+Type=Application
+Name=Eclipse
+Comment=Eclipse Integrated Development Environment
+Icon=** something like /opt/eclipse/icon.xpm **
+Exec= ** something like /opt/eclipse/eclipse **
+Terminal=false
+Categories=Development;IDE;Java;
+StartupWMClass=Eclipse
+
+After that, open that folder with nautilus:
+
+nautilus ~/.local/share/applications
+
+If you want to use this launcher outside dash/launcher (ex: as a desktop launcher) you need to add execution permission by right clicking the file and choosing Properties -> Permissions -> Allow execution, or, via the command-line:
+
+
+
+
+
+
+
+
+
+
+
+
+2:
+
+
+[200~Let me show you how to create a custom launcher and pin it to the Launcher.
+
+1) First, install gnome-panel:
+
+sudo apt-get install --no-install-recommends gnome-panel
+
+2) To create a new desktop shortcut run the following command either in the terminal or using Alt-F2:
+
+gnome-desktop-item-edit --create-new ~/Desktop
+
+A window will pop up, submit your shortcut details and click OK::wq
+

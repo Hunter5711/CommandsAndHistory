@@ -271,4 +271,60 @@ now update the NetworkManager.conf by typing the command:
 sudo service NetworkManager restart
 
 
+################Grub or Boot Loader problem After Installing Ubuntu/Debian.##################
+
+1:
+ with UEFI BIOS -
+reinstall GRUB bootloader to your Ubuntu installation in EFI mode.
+
+Boot from the Ubuntu install media - then open a terminal and execute:
+
+
+sudo mount /dev/sd*** /mnt
+sudo mount /dev/sd** /mnt/boot/efi
+for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+sudo chroot /mnt
+grub-install /dev/sd*
+
+
+update-grub  
+
+Note 2 : sd* = disk | sd** = efi partition | sd*** = system partition 
+
+
+
+
+or try This::
+
+Boot with your Live CD, selecting "Try Ubuntu without installing".
+
+Once it boots, open a terminal (ctrl-alt-t) and mount your Ubuntu partition on /mnt. I'm assuming the Ubuntu partition is /dev/sda5, but you should determine this yourself. Let me know if you need help to do this:
+
+sudo mount /dev/sda5 /mnt 
+
+Then mount a few more directories that are needed:
+
+sudo mount --bind /dev /mnt/dev 
+sudo mount --bind /sys /mnt/sys 
+sudo mount --bind /proc /mnt/proc
+sudo chroot  /mnt  
+sudo update-grub 
+
+Now umount all : 
+sudo umount --bind /dev  /mnt/dev    #########Do this for all the things u have mounted:
+
+Now reboot:
+
+
+
+
+
+
+
+3:
+After you boot to Ubuntu you need to type these commands in terminal line by line:
+
+sudo add-apt-repository ppa:yannubuntu/boot-repair
+sudo apt-get update
+sudo apt-get install -y boot-repair && boot-repair
 

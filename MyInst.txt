@@ -379,3 +379,15 @@ gnome-desktop-item-edit --create-new ~/Desktop
 
 A window will pop up, submit your shortcut details and click OK::wq
 
+
+
+Wifi Adapter Problem in Ubuntu:
+
+Upgrade to 17.10, wifi and bluetooth 'adapters' not found
+
+sudo apt-get update
+and also run 
+
+
+sudo apt-get ugrade          ##############If required
+sudo apt-get install --reinstall bcmwl-kernel-source
